@@ -8,3 +8,59 @@
     -moz-box-shadow: var(--horizontal) var(--vertical) var(--blur) var(--spread) var(--color);
     box-shadow: var(--horizontal) var(--vertical) var(--blur) var(--spread) var(--color);
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+from {
+    transform: translateX(50%);
+    opacity: 0;
+}
+to {
+    transform: translateX(0);
+    opacity: 1;
+}
+}
+
+.slide-in-left {
+    animation: slideInLeft .5s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight .5s ease-out;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+* {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+@supports (bottom: env(safe-area-inset-bottom)) {
+    .sticky-footer {
+        margin-bottom: env(safe-area-inset-bottom);
+    }
+}
