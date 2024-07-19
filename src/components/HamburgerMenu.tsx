@@ -4,8 +4,18 @@ import Folder from './Folder';
 
 const HamburgerMenu: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isMoreOpen, setMoreOpen] = useState(false);
+    const [isSocialOpen, setSocialOpen] = useState(false);
+    const [isGeneralOpen, setGeneralOpen] = useState(false);
 
-    const toggleMenu = () => setIsOpen(!isOpen);
+    const toggleMenu = () => {
+        if (isOpen) {
+            setMoreOpen(false);
+            setSocialOpen(false);
+            setGeneralOpen(false);
+        }
+        setIsOpen(!isOpen);
+    };
 
     return (
         <div className="fixed top-0 right-0 m-5 z-20">
@@ -24,10 +34,15 @@ const HamburgerMenu: React.FC = () => {
                     <Link to="/games" className="block py-2">
                         Games
                     </Link>
+                    <Folder title="General Tips" isOpen={isGeneralOpen} setIsOpen={setGeneralOpen}>
+                        <Link to="/general/fps" className="block py-2">
+                            FPS
+                        </Link>
+                    </Folder>
                     <Link to="/about" className="block py-2">
                         About
                     </Link>
-                    <Folder title="More">
+                    <Folder title="More" isOpen={isMoreOpen} setIsOpen={setMoreOpen}>
                         <Link to="/contact" className="block py-2">
                             Contact
                         </Link>
@@ -38,7 +53,7 @@ const HamburgerMenu: React.FC = () => {
                             Terms
                         </Link>
                     </Folder>
-                    <Folder title="Social">
+                    <Folder title="Social" isOpen={isSocialOpen} setIsOpen={setSocialOpen}>
                         <a href="https://twitter.com/gccody2010" className="block py-2">
                             Twitter
                         </a>

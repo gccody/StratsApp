@@ -1,29 +1,32 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Hero from '../components/Hero';
 import Background from '../components/Background';
 import Card from '../components/Card';
 import RainbowSixSiege from '../assets/RainbowSixSiege.webp';
 import Valorant from '../assets/Valorant.webp';
-// import ApexLegends from '../assets/ApexLegends.webp';
 
 const Home = () => {
+    const navigate = useNavigate();
     return (
         <div className="bg-color1 overflow-y-auto">
             <Background>
-            <Hero />
+                <Hero />
             </Background>
             <Card 
                 photo={RainbowSixSiege}
                 alt="Rainbow Six Siege"
                 title="Rainbow Six Siege"
-                text="Rainbow Six Siege is a tactical shooter video game developed by Ubisoft Montreal and published by Ubisoft. It was released worldwide for Microsoft Windows, PlayStation 4, and Xbox One on December 1, 2015. The game puts heavy emphasis on environmental destruction and cooperation between players."
+                text="“Rainbow Six Siege” is a tactical first-person shooter developed by Ubisoft. It emphasizes strategy, teamwork, and intense close-quarters combat, featuring a variety of unique operators each with specialized gadgets and abilities. Players engage in high-stakes, destructible environments where precision and coordination are key. With modes focusing on attack and defense, “Rainbow Six Siege” offers a deeply immersive experience, rewarding both quick thinking and meticulous planning."
+                onClick={() => navigate("/r6")}
             />
             <Card 
                 photo={Valorant}
                 alt="Valorant"
                 title="Valorant"
-                text="Valorant is a free-to-play multiplayer tactical first-person shooter developed and published by Riot Games, for Microsoft Windows. First teased under the codename Project A in October 2019, the game began a closed beta period with limited access on April 7, 2020, followed by official release on June 2, 2020."
+                text="“Valorant” is a competitive first-person shooter developed by Riot Games, blending tactical gameplay with precise gunplay and unique character abilities. Set in a near-future world, players choose from a diverse roster of agents, each with distinct powers that complement strategic team play. The game emphasizes sharp reflexes, strategic planning, and coordinated teamwork, offering an engaging blend of traditional shooting mechanics and innovative abilities. “Valorant” has quickly become a popular choice in the esports scene, known for its intense, high-stakes matches and dynamic, skill-based gameplay."
                 side="right"
+                onClick={() => navigate("valorant")}
             />
         </div>
     );

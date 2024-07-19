@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 type FolderProps = {
     title: string;
     children: React.ReactNode;
+    isOpen: boolean;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Folder: React.FC<FolderProps> = ({ title, children }) => {
-    const [isOpen, setIsOpen] = useState(false);
-
+const Folder: React.FC<FolderProps> = ({ title, children, isOpen, setIsOpen }) => {
     return (
         <div>
             <button onClick={() => setIsOpen(!isOpen)} className="flex justify-between items-center py-2 w-full">

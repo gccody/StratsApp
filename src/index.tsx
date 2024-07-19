@@ -4,8 +4,9 @@ import { HashRouter as Router } from 'react-router-dom';
 import App from './App';
 import './tailwind.css';
 import './index.css';
-import StickyFooter from './components/StickyFooter';
+import Sticky from './components/Sticky';
 import HamburgerMenu from './components/HamburgerMenu';
+import * as serviceWorkerRegistration from './service-worker-registration';
 
 
 const root = ReactDOM.createRoot(
@@ -16,7 +17,10 @@ root.render(
     <Router>
       <HamburgerMenu />
       <App />
-      <StickyFooter />
+      <Sticky />
     </Router>
   // </React.StrictMode>
 );
+
+// Check that service workers are supported
+serviceWorkerRegistration.register();

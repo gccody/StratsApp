@@ -64,3 +64,10 @@ to {
         margin-bottom: env(safe-area-inset-bottom);
     }
 }
+
+html, body {
+    background-color: #0d1b2a; /* Replace with the actual value of color1 */
+    margin: 0;
+    padding: 0;
+    /* Additional styles if needed */
+}

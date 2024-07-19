@@ -2,10 +2,10 @@ import React from "react";
 
 const Terms = () => {
     return (
-        <div className="bg-color1 overflow-y-auto py-20">
+        <div className={`bg-color1 overflow-y-auto ${window.innerWidth > 768 ? 'py-20' : 'py-32'}`}>
             <div className="text-center text-white">
                 <h1 className="text-5xl font-bold">Terms of Service</h1>
-                <p className="text-xl">Last Updated: January 29th, 2024</p>
+                <p className="text-xl">Last Updated: May 27th, 2024</p>
                 <div className="text-left max-w-3xl mx-auto mt-5">
                     <h2 className="text-3xl font-bold">1. Acceptance of Terms</h2>
                     <p className="text-xl">Welcome to GameStrats.app! By accessing or using our website, you agree to be bound by these Terms of Service ("Terms") and our Privacy Policy. If you do not agree to these Terms, please do not use GameStrats.app.</p>
